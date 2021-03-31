@@ -1,0 +1,18 @@
+message = 'global'
+
+
+def enclosing():
+    message = 'enclosing'
+
+    def local():
+        nonlocal message
+        message = 'local'
+
+    print('Enclosing message: ' + message)
+    local()
+    print('enclosing message: ' + message)
+
+
+print('global message: ' + message)
+enclosing()
+print(('enclosing message: ' + message))
