@@ -1,3 +1,4 @@
+# Las listas son mutables
 nombres = ['Juan', 'Carla', 'Stefani', 'Jacobo', 'Bianca']
 # Imprimir la lista de nombres
 print(nombres)
