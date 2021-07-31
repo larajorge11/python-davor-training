@@ -16,3 +16,10 @@ if age >= 60:
     print('Adult')
 else:
     print('No Adult')
+
+# No es necesario siempre que la condicion sea un boolean, si es vacio este marca false, pero si no lo marca True
+condition = 10
+if condition:
+    print('True condition')
+else:
+    print('False condition')
