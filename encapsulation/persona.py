@@ -30,12 +30,22 @@ class Persona:
     def apellido(self, apellido):
         self.__apellido = apellido
 
+    @property
+    def edad(self):
+        return self.__edad
+
+    @edad.setter
+    def edad(self, edad):
+        self.__edad = edad
+
     def mostrar_detalle(self):
         print(f"Persona: {self.__nombre} {self.__apellido} {self.__edad} {self.__args} {self.__kwargs}")
 
     def __del__(self):
         print(f'Persona {self.__nombre} {self.__apellido} esta siendo eliminado')
 
+
 if __name__ == '__main__':
     persona2 = Persona("Jorge", "Lara", 16, '345', 4, 3, 5, m='manzana', p='piña')
+    persona2.edad = 40
     print(persona2.mostrar_detalle())
