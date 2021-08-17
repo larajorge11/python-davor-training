@@ -20,3 +20,6 @@ rectangulo2.ancho = 6
 print(f'El área del rectangulo es: {rectangulo2.calcular_area()}')
 print(rectangulo2)
 
+# Se modifica el Method Resolution Order al colocar la clase abstracta
+print(Cuadrado.mro())
+

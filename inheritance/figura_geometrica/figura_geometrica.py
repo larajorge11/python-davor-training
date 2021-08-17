@@ -1,4 +1,11 @@
-class FiguraGeometrica:
+# ABC : Abstract Base Class
+# No se puede instanciar una clase abstracta, las clases hijas estan obligadas a heredar ese metodo
+# Con un metodo abstracto toda la clase se vuelve abstracta
+
+from abc import ABC, abstractmethod
+
+
+class FiguraGeometrica(ABC):
     def __init__(self, alto, ancho):
         if alto > 0:
             self.__alto = alto
@@ -30,6 +37,10 @@ class FiguraGeometrica:
     def ancho(self, ancho):
         if self._validar_valor(ancho):
             self.__ancho = ancho
+
+    @abstractmethod
+    def calcular_area(self):
+        pass
 
     def _validar_valor(self, valor):
         return True if valor > 0 else False
