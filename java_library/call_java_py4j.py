@@ -1,6 +1,7 @@
 import numpy as np
-from py4j.java_gateway import JavaGateway
-gateway = JavaGateway()
+from py4j.java_gateway import JavaGateway, GatewayParameters
+
+gateway = JavaGateway(gateway_parameters=GatewayParameters(auto_convert=True))
 helloJava = gateway.entry_point.getMain()
 
 if __name__ == '__main__':
@@ -28,18 +29,13 @@ if __name__ == '__main__':
     print(total_value)
 
     print('Getting a list from Java'.center(50, '-'))
-    calculation_list = helloJava.getCalculationList(50)
+    calculation_list = helloJava.getCalculationList_2(50)
     print(len(calculation_list))
     print(f'first element from list {calculation_list[0]}')
     print(f'last element from list {calculation_list[-1]}')
 
-    a = np.array(calculation_list)
-    b = np.arange(len(calculation_list))
-    print(f'Array calculated from Java: {a}')
-    print(f'Array created by Numpy {b}')
-
-    c = a - b
-    print(f'Array Operation with Numpy {c}')
+    val = helloJava.getTestData(2, 2)
+    print('finish')
 
 
 
